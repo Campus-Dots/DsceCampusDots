@@ -1,7 +1,7 @@
 # flutter_application_1
 
 A new Flutter project.
-
+Please download java jdk version <16
 ## Getting Started
 
 This project is a starting point for a Flutter application.
