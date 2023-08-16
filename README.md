@@ -22,3 +22,9 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+gradle wrapper info: https://docs.gradle.org/current/userguide/gradle_wrapper.html
+installing gradle (don't delete everything like me): https://docs.gradle.org/current/userguide/installation.html#installation
+soln to gradle wrapper main error: https://stackoverflow.com/questions/29805622/could-not-find-or-load-main-class-org-gradle-wrapper-gradlewrappermain
+changing minsdkversion: https://stackoverflow.com/questions/52060516/flutter-how-to-change-android-minsdkversion-in-flutter-project
