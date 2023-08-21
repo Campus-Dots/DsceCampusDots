@@ -62,7 +62,7 @@ class _SignInState extends State<SignIn> {
                   height: 20.0,
                 ),
                 TextFormField(
-                  obscureText: true,
+                  obscureText: !showPassword,
                   validator: (val) => val!.length < 6
                       ? 'Enter the password 6+ chars long'
                       : null,
@@ -72,14 +72,14 @@ class _SignInState extends State<SignIn> {
                   decoration: InputDecoration(
                     hintText: 'Enter password',
                     suffixIcon: IconButton(
+                      icon: Icon(
+                        showPassword ? Icons.visibility : Icons.visibility_off,
+                      ),
                       onPressed: () {
                         setState(() {
                           showPassword = !showPassword;
                         });
                       },
-                      icon: Icon(
-                        showPassword ? Icons.visibility : Icons.visibility_off,
-                      ),
                     ),
                   ),
                 ),
