@@ -20,6 +20,7 @@ class _SignInState extends State<SignIn> {
   String email = '';
   String password = '';
   String error = '';
+  bool showPassword = false;
 
   // get val => null;
 
@@ -55,6 +56,7 @@ class _SignInState extends State<SignIn> {
                   onChanged: (val) {
                     setState(() => email = val);
                   },
+                  decoration: const InputDecoration(hintText: 'Enter E-mail'),
                 ),
                 const SizedBox(
                   height: 20.0,
@@ -67,6 +69,19 @@ class _SignInState extends State<SignIn> {
                   onChanged: (val) {
                     setState(() => password = val);
                   },
+                  decoration: InputDecoration(
+                    hintText: 'Enter password',
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          showPassword = !showPassword;
+                        });
+                      },
+                      icon: Icon(
+                        showPassword ? Icons.visibility : Icons.visibility_off,
+                      ),
+                    ),
+                  ),
                 ),
                 const SizedBox(
                   height: 20.0,
