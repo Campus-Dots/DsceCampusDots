@@ -5,6 +5,9 @@ import 'package:flutter_application_1/screens/wrapper.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_application_1/services/auth.dart';
 import 'package:provider/provider.dart';
+// import '';
+// import 'package:firebase_core/firebase_core.dart';
+// import './firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
