@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/services/auth.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class Home extends StatelessWidget {
   final AuthService _auth = AuthService();
@@ -21,6 +22,29 @@ class Home extends StatelessWidget {
               },
               label: const Text('logout'))
         ],
+      ),
+      body: CarouselSlider(
+        // This widget shows the sliding images
+        items: [
+          // These images below are place holders. Add whatever Images you like
+          Image.asset(
+            'lib/assets/Placeholder1.jpg',
+            fit: BoxFit.cover,
+          ),
+          Image.asset(
+            'lib/assets/Placeholder2.jpg',
+            fit: BoxFit.cover,
+          ),
+          Image.asset(
+            'lib/assets/Placeholder3.jpg',
+            fit: BoxFit.cover,
+          ),
+        ],
+        options: CarouselOptions(
+            autoPlay: true,
+            aspectRatio: 16 / 9,
+            enlargeCenterPage: true,
+            viewportFraction: 0.7),
       ),
     );
   }
