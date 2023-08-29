@@ -1,10 +1,6 @@
-// ignore_for_file: avoid_unnecessary_containers
-
-import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/authenticate/register.dart';
-import 'package:flutter_application_1/screens/authenticate/sign_in.dart';
-// import 'package:flutter_application_1/screens/authenticate/sign_in.dart';
-// import 'package:flutter_application_1/screens/authenticate/sign_in.dart';
+import "package:flutter/material.dart";
+import "package:campus_dots/screens/authenticate/register.dart";
+import "package:campus_dots/screens/authenticate/sign_in.dart";
 
 class Authenticate extends StatefulWidget {
   const Authenticate({super.key});
@@ -14,6 +10,7 @@ class Authenticate extends StatefulWidget {
 }
 
 class _AuthenticateState extends State<Authenticate> {
+
   bool showSignIn = true;
   void toggleView() {
     setState(() => showSignIn = !showSignIn);

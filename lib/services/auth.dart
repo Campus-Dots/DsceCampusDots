@@ -1,70 +1,86 @@
-// ignore_for_file: avoid_print
-
 import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:flutter/material.dart';
-import 'package:flutter_application_1/models/user_.dart';
+import 'package:campus_dots/models/current_user.dart';
+// ignore: unused_import
+import 'package:campus_dots/services/event.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  //create user object based on firebase User
-
-  MyUser? _userFromFirebaseUser(User? user) {
-    return user != null ? MyUser(uid: user.uid) : null;
-    // return null;
-    // return MyUser(uid: user!.uid);
+  // create users obj based on firebase user
+  CurrentUser? _customModelForUser(User? user) {
+    //return user != null ? CurrentUser(uid: user.uid) : null;
+    // ignore: unnecessary_null_comparison
+    if (user != null) {
+      return CurrentUser(uid: user.uid);
+    } else {
+      return null;
+    }
   }
+
   //auth change user stream
-
-  Stream<MyUser?> get user {
-    return _auth.authStateChanges().map(_userFromFirebaseUser);
-    // .map((User? user) => _userFromFirebaseUser(user));
+  Stream<CurrentUser?> get currentUser {
+    return _auth.authStateChanges().map(_customModelForUser);
+    //.map((User user) => _customModelForUser(user));
   }
 
-  //sign in anon
+  //sign in anonymously
   Future signInAnon() async {
     try {
       UserCredential result = await _auth.signInAnonymously();
       User? user = result.user;
-      return _userFromFirebaseUser(user);
+      return user;
     } catch (e) {
+      // ignore: avoid_print
       print(e.toString());
       return null;
     }
   }
 
-  //sign with email and password
+  //sign in email and pwd
   Future signInWithEmailAndPassword(String email, String password) async {
     try {
       UserCredential result = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
       User? user = result.user;
-      return _userFromFirebaseUser(user);
+      return _customModelForUser(user);
     } catch (e) {
+      // ignore: avoid_print
       print(e.toString());
       return null;
     }
   }
 
-  //register with email and password
+  //register with email and pwd
   Future registerWithEmailAndPassword(String email, String password) async {
     try {
       UserCredential result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       User? user = result.user;
-      return _userFromFirebaseUser(user);
+
+      // //create a new doc for the user with the uid
+      // await Event(uid: user!.uid).updateEventData(
+      //     'Cultural',
+      //     "Shreya ma'am",
+      //     '10:00 am',
+      //     'CS students',
+      //     'make digital poster on given topic',
+      //     'Csfiesta dance',
+      //     'CPA building');
+
+      return _customModelForUser(user);
     } catch (e) {
+      // ignore: avoid_print
       print(e.toString());
       return null;
     }
   }
 
   //sign out
-
   Future signOut() async {
     try {
       return await _auth.signOut();
     } catch (e) {
+      // ignore: avoid_print
       print(e.toString());
       return null;
     }
