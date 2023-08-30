@@ -53,7 +53,7 @@ class _HomePageState extends State<Home> {
 
   _loadFirestoreEvents() async {
     final firstDay = DateTime(_focusedDay.year, _focusedDay.month, 1);
-    final lastDay = DateTime(_focusedDay.year, _focusedDay.month + 1, 0);
+    final lastDay = DateTime(_focusedDay.year, _focusedDay.month + 1, 1);
     _events = {};
 
     final snap = await FirebaseFirestore.instance
