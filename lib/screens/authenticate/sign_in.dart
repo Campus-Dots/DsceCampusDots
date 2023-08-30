@@ -55,8 +55,16 @@ class _SignInState extends State<SignIn> {
               child: Form(
                 key: _formKey,
                 child: Column(
+                  // mainAxisAlignment: MainAxisAlignment.center,
+                  // crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    const SizedBox(height: 20.0),
+                    const SizedBox(
+                      height: 20.0,
+                      child: ColoredBox(color: Colors.amber),
+                      // child: DecoratedBox(
+                      //   decoration: BoxDecoration(color: Colors.grey),
+                      // ),
+                    ),
                     TextFormField(
                         decoration: textInputDecoration.copyWith(
                           hintText: 'Email',
