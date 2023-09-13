@@ -5,7 +5,7 @@ import 'package:campus_dots/screens/wrapper.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:campus_dots/services/auth.dart';
 // ignore: unused_import
-import 'package:campus_dots/splash.dart';
+import 'package:campus_dots/screens/splash.dart';
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 
