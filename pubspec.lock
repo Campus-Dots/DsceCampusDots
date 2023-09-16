@@ -541,10 +541,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.2"
-sdks:
-<<<<<<< Updated upstream
+   sdks:
   dart: ">=3.1.0 <4.0.0"
-=======
-  dart: ">=3.1.0-185.0.dev <4.0.0"
->>>>>>> Stashed changes
   flutter: ">=3.3.0"
